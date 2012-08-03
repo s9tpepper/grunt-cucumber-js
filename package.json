@@ -32,10 +32,13 @@
     },
     "devDependencies" : {
         "grunt" : "~0.3.9",
-        "grunt-contrib": "~0.1.4",
         "cucumber": "~0.2.19"
     },
     "keywords" : [
-        "gruntplugin"
+        "gruntplugin",
+        "grunt",
+        "plugins",
+        "builds",
+        "ci"
     ]
 }

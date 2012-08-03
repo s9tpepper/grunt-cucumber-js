@@ -28,8 +28,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib');
-
     grunt.loadTasks("tasks");
 
     grunt.registerTask('default', 'lint cucumberjs');
