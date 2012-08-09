@@ -3,7 +3,7 @@
 A grunt.js task to run your cucumber.js feature suite.
 
 ## Getting Started
-Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-cucumber-js`
+Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-cucumber`
 
 Then add this line to your project's `grunt.js` gruntfile:
 
@@ -17,7 +17,7 @@ grunt.initConfig({
   }
 });
 
-grunt.loadNpmTasks('grunt-cucumber-js');
+grunt.loadNpmTasks('grunt-cucumber');
 
 grunt.registerTask('default', 'cucumberjs');
 ```
