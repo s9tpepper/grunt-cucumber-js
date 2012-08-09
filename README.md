@@ -10,6 +10,7 @@ Then add this line to your project's `grunt.js` gruntfile:
 ```javascript
 grunt.initConfig({
   cucumberjs: {
+    executable: "../path/to/custom/cucumberjs",
     features: "path/to/features",
     steps: "path/to/step_definitions",
     tags: "@dev"

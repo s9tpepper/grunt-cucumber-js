@@ -1,7 +1,7 @@
 {
     "name" : "grunt-cucumber",
     "description" : "Grunt task for running Cucumber.js",
-    "version" : "0.1.0",
+    "version" : "0.1.1",
     "homepage" : "https://github.com/s9tpepper/grunt-cucumber-js",
     "author" : {
         "name" : "Omar Gonzalez",

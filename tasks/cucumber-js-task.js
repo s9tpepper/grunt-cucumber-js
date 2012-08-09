@@ -2,7 +2,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask("cucumberjs", "Runs cucumber.js", function () {
 
-        var Cucumber = require('cucumber');
+        var cucumberPath = grunt.config("cucumberjs.executable") || 'cucumber';
+        var Cucumber = require(cucumberPath);
 
         var features    = grunt.config("cucumberjs.features") || 'features';
         var steps       = grunt.config("cucumberjs.steps") || 'features/step_definitions';

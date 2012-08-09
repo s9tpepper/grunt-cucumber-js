@@ -23,6 +23,7 @@ module.exports = function (grunt) {
             globals: {}
         },
         cucumberjs: {
+            executable: "../node_modules/cucumber/lib/cucumber.js", /* Relative to /tasks folder */
             features: "features",
             steps: "features/step_definitions"
         }
