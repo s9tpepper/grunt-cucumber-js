@@ -1,25 +1,88 @@
-# grunt-cucumber-js
+# grunt-cuccumber-js
 
-A grunt.js task to run your cucumber.js feature suite.
+> Run all you your cucumber features through Grunt.
+
+**Warning:** This task requires a Grunt version of at least `0.4.0`.
+
 
 ## Getting Started
-Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-cucumber`
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to
+check out the [Getting Started](http://gruntjs.com/getting-started)
+guide, as it explains how to create a
+[Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install
+and use Grunt plugins. Once you're familiar with that process, you may
+install this plugin with this command:
 
-Then add this line to your project's `grunt.js` gruntfile:
+```shell
+$ npm install grunt-cucumber --save-dev
+```
+Then add this configuration to your project's `Gruntfile.js`.
 
-```javascript
+```js
+grunt.loadNpmTasks('grunt-cucumber');
+```
+
+## Cucumberjs Task
+_Run this task with the `grunt cucumberjs` command._
+
+### Options
+
+#### steps
+Type: `String`
+
+Default: `''`
+
+Require files before executing the features. If this option is not
+specified, all *.js and *.coffee files that are siblings or below the
+features will be loaded automatically. Automatic loading is disabled
+when this option is specified, and all loading becomes explicit.
+
+Files under directories named "support" are always loaded first.
+
+#### tags
+Type: `String`
+
+Default: `''`
+
+Only execute the features or scenarios with tags
+matching TAG_EXPRESSION. Scenarios inherit tags
+declared on the Feature level. The simplest
+TAG_EXPRESSION is simply a tag. Example:
+`tags: '@dev'`
+
+When a tag in a tag expression starts with a ~,
+this represents boolean NOT. Example:
+`tags: '~@dev'`
+
+ A tag expression can have several tags separated
+by a comma, which represents logical OR. Example:
+`tags: '@dev,@wip'`
+
+#### format
+Type: `String`
+Default: `''`
+
+How to format features (default: progress).
+Available formats:
+* pretty  : prints the feature as is
+* progress: prints one character per scenario
+* json    : prints the feature as JSON
+* summary : prints a summary only, after all scenarios were executed
+
+### Usage Examples
+
+
+#### Basic Use
+```js
+// Project configuration.
 grunt.initConfig({
   cucumberjs: {
-    executable: "../path/to/custom/cucumberjs",
-    features: "path/to/features",
-    steps: "path/to/step_definitions",
-    tags: "@dev"
+    files: 'path/to/features',
+    options: {
+      steps: "path/to/step_definitions"
+    }
   }
 });
-
-grunt.loadNpmTasks('grunt-cucumber');
-
-grunt.registerTask('default', 'cucumberjs');
 ```
 
 ## Bugs
@@ -28,7 +91,7 @@ Help us squash them by submitting an issue that describes how you encountered it
 
 ## Release History
 
-see [CHANGELOG](/s9tpepper/grunt-cucumber-js/blob/master/CHANGELOG).
+see [CHANGELOG](CHANGELOG.md).
 
 ## License
 Copyright (c) 2012 "s9tpepper" Omar Gonzalez & contributors.
