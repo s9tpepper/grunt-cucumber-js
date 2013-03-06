@@ -21,8 +21,7 @@
       "url": "https://github.com/s9tpepper/grunt-cucumber-js/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "grunt.js",
-  "bin": "bin/grunt-cucumber",
+  "main": "Gruntfile.js",
   "engines": {
     "node": "*"
   },
