@@ -40,12 +40,13 @@ module.exports = function (grunt) {
       }
     };
 
-    var files = this.filesSrc.join(' ');
+    var files = this.filesSrc;
 
 
     var execOptions = ['node', 'node_modules/.bin/cucumber-js'];
+
     if (! _.isEmpty(files)) {
-      execOptions.push(files);
+      execOptions = execOptions.concat(files);
     }
 
     if (! _.isEmpty(steps)) {
