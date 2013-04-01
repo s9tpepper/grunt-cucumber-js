@@ -1,8 +1,5 @@
 module.exports = function (grunt) {
 
-  var cucumber = require('cucumber');
-  var _ = grunt.util._;
-
   // The Cucumber Task
   grunt.registerMultiTask('cucumberjs', 'Runs cucumber.js', function () {
     // Make this task async
@@ -14,7 +11,8 @@ module.exports = function (grunt) {
     var steps = options.steps;
     var tags = options.tags;
     var format = options.format;
-
+    var executable = options.executable;
+    
     grunt.verbose.writeflags(options, 'Options');
 
     var callback = function(succeeded) {
@@ -44,7 +42,8 @@ module.exports = function (grunt) {
 
 
     var execOptions = ['node', 'node_modules/.bin/cucumber-js'];
-
+    
+    var _ = grunt.util._;
     if (! _.isEmpty(files)) {
       execOptions = execOptions.concat(files);
     }
@@ -63,8 +62,14 @@ module.exports = function (grunt) {
       execOptions.push('-f');
       execOptions.push(format);
     }
+    
+    var cucumberPath = 'cucumber';
+    if (! _.isEmpty(executable)) {
+      cucumberPath = executable;
+    }
 
     grunt.verbose.writeln('Exec Options: ' + execOptions.join(' '));
+    var cucumber = require(cucumberPath);
     cucumber.Cli(execOptions).run(callback);
 
   });
