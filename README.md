@@ -1,6 +1,6 @@
 # grunt-cucumber-js
 
-> Run all you your cucumber features through Grunt.
+> Run all your cucumber features through Grunt.
 
 **Warning:** This task requires a Grunt version of at least `0.4.0`.
 
@@ -60,6 +60,7 @@ by a comma, which represents logical OR. Example:
 
 #### format
 Type: `String`
+
 Default: `''`
 
 How to format features (default: progress).
@@ -68,6 +69,19 @@ Available formats:
 * progress: prints one character per scenario
 * json    : prints the feature as JSON
 * summary : prints a summary only, after all scenarios were executed
+
+#### executable
+Type: `String`
+
+Default: `'cucumber'`
+
+Used to set the path to Cucumber.js's `lib/cucumber.js` 
+file if you don't want to load it from the `npm_modules` 
+directory using `require('cucumber')`. Useful for running
+customized versions of Cucumber.js for a specific project.
+
+Example: `executable: "../../custom_libs/cucumberjs/lib/cucumber.js"`
+
 
 ### Usage Examples
 
