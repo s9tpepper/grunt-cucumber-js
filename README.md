@@ -1,4 +1,4 @@
-# grunt-cuccumber-js
+# grunt-cucumber-js
 
 > Run all you your cucumber features through Grunt.
 
