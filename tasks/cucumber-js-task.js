@@ -16,9 +16,8 @@ module.exports = function (grunt) {
     grunt.verbose.writeflags(options, 'Options');
 
     var callback = function(succeeded) {
-      var code = succeeded ? 0 : 1;
       var exitFunction = function() {
-        done(code);
+        done(succeeded);
       };
 
       // --- exit after waiting for all pending output ---
