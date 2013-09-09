@@ -4,7 +4,7 @@
 * Merged fix to README file for 'src' instead of 'files'
 * Renamed 'executable' to 'modulePath' so it is correctly named
 
-# v 0.2.1
+## v 0.2.1
 * Brought back the 'executable' option
 
 ## v 0.2.0
