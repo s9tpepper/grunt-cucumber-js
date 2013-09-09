@@ -91,7 +91,7 @@ Example: `executable: "../../custom_libs/cucumberjs/lib/cucumber.js"`
 // Project configuration.
 grunt.initConfig({
   cucumberjs: {
-    files: 'path/to/features',
+    src: 'path/to/features',
     options: {
       steps: "path/to/step_definitions"
     }
