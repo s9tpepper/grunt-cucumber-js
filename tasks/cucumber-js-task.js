@@ -12,13 +12,12 @@ module.exports = function (grunt) {
     var tags = options.tags;
     var format = options.format;
     var executable = options.executable;
-    
+
     grunt.verbose.writeflags(options, 'Options');
 
     var callback = function(succeeded) {
-      var code = succeeded ? 0 : 1;
       var exitFunction = function() {
-        done(code);
+        done(succeeded);
       };
 
       // --- exit after waiting for all pending output ---
@@ -42,7 +41,7 @@ module.exports = function (grunt) {
 
 
     var execOptions = ['node', 'node_modules/.bin/cucumber-js'];
-    
+
     var _ = grunt.util._;
     if (! _.isEmpty(files)) {
       execOptions = execOptions.concat(files);
@@ -62,7 +61,7 @@ module.exports = function (grunt) {
       execOptions.push('-f');
       execOptions.push(format);
     }
-    
+
     var cucumberPath = 'cucumber';
     if (! _.isEmpty(executable)) {
       cucumberPath = executable;
