@@ -70,17 +70,19 @@ Available formats:
 * json    : prints the feature as JSON
 * summary : prints a summary only, after all scenarios were executed
 
-#### executable
+#### modulePath
 Type: `String`
 
 Default: `'cucumber'`
 
 Used to set the path to Cucumber.js's `lib/cucumber.js` 
 file if you don't want to load it from the `npm_modules` 
-directory using `require('cucumber')`. Useful for running
-customized versions of Cucumber.js for a specific project.
+directory using the default `require('cucumber')`. Useful for running
+customized versions of Cucumber.js for a specific project. 
+It is helpful when you need to modify the Cucumber.js lib
+but you can not open source the contributions.
 
-Example: `executable: "../../custom_libs/cucumberjs/lib/cucumber.js"`
+Example: `modulePath: "../../custom_libs/cucumberjs/lib/cucumber.js"`
 
 
 ### Usage Examples

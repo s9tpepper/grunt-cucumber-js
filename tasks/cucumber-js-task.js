@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     var steps = options.steps;
     var tags = options.tags;
     var format = options.format;
-    var executable = options.executable;
+    var modulePath = options.modulePath;
 
     grunt.verbose.writeflags(options, 'Options');
 
@@ -63,8 +63,8 @@ module.exports = function (grunt) {
     }
 
     var cucumberPath = 'cucumber';
-    if (! _.isEmpty(executable)) {
-      cucumberPath = executable;
+    if (! _.isEmpty(modulePath)) {
+      cucumberPath = modulePath;
     }
 
     grunt.verbose.writeln('Exec Options: ' + execOptions.join(' '));

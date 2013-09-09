@@ -1,4 +1,7 @@
 # Changelog
+## v 0.2.3
+* Fixed 'executable' rename to 'modulePath'
+
 ## v 0.2.2
 * Merged fix for incorrect status code
 * Merged fix to README file for 'src' instead of 'files'
