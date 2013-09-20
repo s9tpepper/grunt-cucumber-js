@@ -53,7 +53,7 @@ module.exports = function (grunt) {
     }
 
     if (! _.isEmpty(tags)) {
-      if (typeof tags == "string") {
+      if (typeof tags === "string") {
        tags = [tags];
       }
       for (var i=0; i < tags.length; i++) {

@@ -58,9 +58,9 @@ this represents boolean NOT. Example:
 by a comma, which represents logical OR. Example:
 `tags: '@dev,@wip'`
 
-To represent a logcal AND, use an array.
+To represent a logical AND, use an array.
 This is useful if you want to skip certain features
-and run other specific (tagged) features. Example:
+and run other specific features. Example:
 `tags: ['~@wip', '@dev']`
 
 #### format
