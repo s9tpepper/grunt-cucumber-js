@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         }
       },
       test2: {
-        files: 'features',
+        files: 'features/tags.feature',
         options: {
           steps: 'features/step_definitions',
           format: 'pretty',
@@ -25,11 +25,19 @@ module.exports = function (grunt) {
         }
       },
       test3: {
-        files: 'features',
+        files: 'features/tags.feature',
         options: {
           steps: 'features/step_definitions',
           format: 'pretty',
-          tags: ['~@wip', '@tag']
+          tags: ['@wip', '~@tag']
+        }
+      },
+      test4: {
+        files: 'features/tags.feature',
+        options: {
+          steps: 'features/step_definitions',
+          format: 'pretty',
+          tags: ['@wip', '@tag']
         }
       }
     }
@@ -41,5 +49,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['jshint', 'cucumberjs:test1']);
 
-  grunt.registerTask('tag-tests', ['cucumberjs:test2', 'cucumberjs:test3'])
+  grunt.registerTask('tag-tests', ['cucumberjs:test2', 'cucumberjs:test3', 'cucumberjs:test4'])
 };
