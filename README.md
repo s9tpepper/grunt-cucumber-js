@@ -84,6 +84,12 @@ but you can not open source the contributions.
 
 Example: `modulePath: "../../custom_libs/cucumberjs/lib/cucumber.js"`
 
+#### coffee
+Type: `Boolean`
+
+Default: `false`
+
+When true, cucumberjs will output code snippets in coffeescript
 
 ### Usage Examples
 
