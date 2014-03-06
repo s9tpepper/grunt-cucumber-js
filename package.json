@@ -27,7 +27,7 @@
   },
   "scripts": {},
   "dependencies": {
-    "cucumber": "~0.3.0"
+    "cucumber": "~0.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
