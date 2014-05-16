@@ -48,8 +48,18 @@ module.exports = function (grunt) {
     }
 
     if (! _.isEmpty(steps)) {
-      execOptions.push('-r');
-      execOptions.push(steps);
+      function addStep(step) {
+        execOptions.push('-r');
+        execOptions.push(step);
+      }
+
+      if (_.isArray(steps)) {
+        for (var i=0; i < steps.length; i++) {
+          addStep(steps[i]);
+        }
+      } else {
+        addStep(steps);
+      }
     }
 
     if (! _.isEmpty(tags)) {
