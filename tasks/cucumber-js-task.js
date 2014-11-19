@@ -9,6 +9,7 @@ module.exports = function (grunt) {
     var options = this.options();
 
     var steps = options.steps;
+    var support = options.support;
     var tags = options.tags;
     var format = options.format;
     var modulePath = options.modulePath;
@@ -50,6 +51,11 @@ module.exports = function (grunt) {
     if (! _.isEmpty(steps)) {
       execOptions.push('-r');
       execOptions.push(steps);
+    }
+
+    if (! _.isEmpty(support)) {
+      execOptions.push('-r');
+      execOptions.push(support);
     }
 
     if (! _.isEmpty(tags)) {

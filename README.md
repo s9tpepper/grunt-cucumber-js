@@ -39,6 +39,14 @@ when this option is specified, and all loading becomes explicit.
 
 Files under directories named "support" are always loaded first.
 
+#### support
+Type: `String`
+
+Default: `''`
+
+Support files let you setup the environment in which steps will be run. If you are using steps option then you have to use support option as well (hooks etc.).
+
+
 #### tags
 Type: `String`
 
