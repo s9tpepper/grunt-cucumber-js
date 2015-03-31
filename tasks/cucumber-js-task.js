@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     var tags = grunt.option('tags') || options.tags;
     var format = grunt.option('format') || options.format;
     var modulePath = options.modulePath;
+    var coffee = options.coffee;
 
     grunt.verbose.writeflags(options, 'Options');
 
@@ -65,6 +66,10 @@ module.exports = function (grunt) {
     if (! _.isEmpty(format)) {
       execOptions.push('-f');
       execOptions.push(format);
+    }
+
+    if (coffee) {
+      execOptions.push('--coffee');
     }
 
     var cucumberPath = 'cucumber';
