@@ -53,8 +53,13 @@ module.exports = function (grunt) {
     }
 
     if (! _.isEmpty(tags)) {
-      execOptions.push('-t');
-      execOptions.push(tags);
+      if (typeof tags === "string") {
+       tags = [tags];
+      }
+      for (var i=0; i < tags.length; i++) {
+       execOptions.push('-t');
+       execOptions.push(tags[i]);
+      }
     }
 
     if (! _.isEmpty(format)) {
