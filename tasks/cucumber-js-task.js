@@ -11,8 +11,9 @@ module.exports = function (grunt) {
     var steps = grunt.option('steps') || options.steps;
     var tags = grunt.option('tags') || options.tags;
     var format = grunt.option('format') || options.format;
-    var modulePath = options.modulePath;
-    var coffee = options.coffee;
+    var support = grunt.option('support') || options.support;
+    var modulePath = grunt.option('modulePath') || options.modulePath;
+    var coffee = grunt.option('coffee') || options.coffee;
 
     grunt.verbose.writeflags(options, 'Options');
 
@@ -62,6 +63,11 @@ module.exports = function (grunt) {
       } else {
         addStep(steps);
       }
+    }
+
+    if (! _.isEmpty(support)) {
+      execOptions.push('-r');
+      execOptions.push(support);
     }
 
     if (! _.isEmpty(tags)) {
