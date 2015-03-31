@@ -8,9 +8,9 @@ module.exports = function (grunt) {
     // Load all the options
     var options = this.options();
 
-    var steps = options.steps;
-    var tags = options.tags;
-    var format = options.format;
+    var steps = grunt.option('steps') || options.steps;
+    var tags = grunt.option('tags') || options.tags;
+    var format = grunt.option('format') || options.format;
     var modulePath = options.modulePath;
 
     grunt.verbose.writeflags(options, 'Options');
