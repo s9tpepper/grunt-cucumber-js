@@ -48,14 +48,15 @@ module.exports = function (grunt) {
       execOptions = execOptions.concat(files);
     }
 
-    if (! _.isEmpty(steps)) {
-      function addStep(step) {
-        execOptions.push('-r');
-        execOptions.push(step);
-      }
+    function addStep(step) {
+      execOptions.push('-r');
+      execOptions.push(step);
+    }
 
+    var i;
+    if (! _.isEmpty(steps)) {
       if (_.isArray(steps)) {
-        for (var i=0; i < steps.length; i++) {
+        for (i=0; i < steps.length; i++) {
           addStep(steps[i]);
         }
       } else {
@@ -67,7 +68,7 @@ module.exports = function (grunt) {
       if (typeof tags === "string") {
        tags = [tags];
       }
-      for (var i=0; i < tags.length; i++) {
+      for (i=0; i < tags.length; i++) {
        execOptions.push('-t');
        execOptions.push(tags[i]);
       }
